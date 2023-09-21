@@ -79,3 +79,20 @@ describe('total likes', () => {
     expect(result).toBe(36)
   })
 })
+
+describe('favorite blog', () => {
+  /**
+   *   MOST LIKED
+    title: 'Canonical string reduction',
+    author: 'Edsger W. Dijkstra',
+    likes: 12
+   */
+  test('returns the blog with most likes', () => {
+    const mostLiked = {
+      title: 'Canonical string reduction',
+      author: 'Edsger W. Dijkstra',
+      likes: 12
+    }
+    expect(listHelper.favoriteBlog(biggerList)).toEqual(mostLiked)
+  })
+})
