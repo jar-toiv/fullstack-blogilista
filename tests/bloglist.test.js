@@ -86,6 +86,7 @@ describe('favorite blog', () => {
     title: 'Canonical string reduction',
     author: 'Edsger W. Dijkstra',
     likes: 12
+    returns {title, author, likes}
    */
   test('returns the blog with most likes', () => {
     const mostLiked = {
@@ -95,4 +96,15 @@ describe('favorite blog', () => {
     }
     expect(listHelper.favoriteBlog(biggerList)).toEqual(mostLiked)
   })
+})
+
+describe('return author with the most blog posts', () => {
+  /**
+   * returns {author, blogs}
+   */
+  const mostBlogs = {
+    author: 'Robert C. Martin',
+    blogs: 3
+  }
+  expect(listHelper.mostBLogs(biggerList)).toEqual(mostBlogs)
 })
