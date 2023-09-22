@@ -75,17 +75,32 @@ const mostBLogs = blogs => {
     authorCount[blog.author] = (authorCount[blog.author] || 0) + 1
   })
 
-  const maxAuthorBlogs = Object.entries(authorCount).sort(
-    (a, b) => b[1] - a[1]
-  )[0]
+  const maxBlogs = Object.entries(authorCount).sort((a, b) => b[1] - a[1])[0]
 
   return {
-    author: maxAuthorBlogs[0],
-    blogs: maxAuthorBlogs[1]
+    author: maxBlogs[0],
+    blogs: maxBlogs[1]
+  }
+}
+
+const mostLikes = blogs => {
+  const authorLikes = {}
+
+  blogs.forEach(blog => {
+    authorLikes[blog.author] = (authorLikes[blog.author] || 0) + blog.likes
+  })
+  const maxLikes = Object.entries(authorLikes).sort((a, b) => b[1] - a[1])[0]
+
+  console.log({ author: maxLikes[0], likes: maxLikes[1] })
+
+  return {
+    author: maxLikes[0],
+    likes: maxLikes[1]
   }
 }
 module.exports = {
   totalLikes,
   favoriteBlog,
-  mostBLogs
+  mostBLogs,
+  mostLikes
 }

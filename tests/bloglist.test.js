@@ -98,13 +98,30 @@ describe('favorite blog', () => {
   })
 })
 
-describe('return author with the most blog posts', () => {
+describe('most blog posts', () => {
   /**
    * returns {author, blogs}
    */
-  const mostBlogs = {
-    author: 'Robert C. Martin',
-    blogs: 3
-  }
-  expect(listHelper.mostBLogs(biggerList)).toEqual(mostBlogs)
+  test('returns the blog with most blog posts', () => {
+    const mostBlogs = {
+      author: 'Robert C. Martin',
+      blogs: 3
+    }
+    expect(listHelper.mostBLogs(biggerList)).toEqual(mostBlogs)
+  })
+})
+
+describe('most likes', () => {
+  /**
+   * Edsger W. Dijkstra , 17
+   * returns {author, likes}
+   */
+
+  test('returns author with most likes', () => {
+    const mostLikes = {
+      author: 'Edsger W. Dijkstra',
+      likes: 17
+    }
+    expect(listHelper.mostLikes(biggerList)).toEqual(mostLikes)
+  })
 })
